@@ -1,8 +1,8 @@
 // 布局主界面
 <template>
-  <div>
+  <div class="myMain">
+    <div class="titleHeader">青岛豪诚木工管理系统</div>
     <div :class="classObj" class="app-wrapper">
-      <div class="titleHeader">青岛豪诚木工管理系统</div>
       <div v-if="device==='mobile'&&sidebar.opened" class="drawer-bg" @click="handleClickOutside" />
       <sidebar class="sidebar-container" />
       <div class="main-container">
@@ -57,23 +57,27 @@ export default {
 <style lang="scss" scoped>
   @import "~@/styles/mixin.scss";
   @import "~@/styles/variables.scss";
-  .titleHeader{
-    position: relative;
-    height: 100px;
-    text-align: center;
-    padding-top: 1%;
-    font-size: 2em;
-    background-color: rgb(170, 231, 216);
+  .myMain {
+    height: 100%;
+    width: 100%;
   }
   .app-wrapper {
     @include clearfix;
     position: relative;
-    height: 100%;
+    height: 90%;
     width: 100%;
     &.mobile.openSidebar{
       position: fixed;
       top: 0;
     }
+  }
+  .titleHeader{
+    position: relative;
+    height: 10%;
+    text-align: center;
+    padding-top: 1%;
+    font-size: 2em;
+    background-color: rgb(170, 241, 188);
   }
   .drawer-bg {
     background: #000;
