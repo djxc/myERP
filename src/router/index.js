@@ -51,8 +51,8 @@ export const constantRoutes = [
       path: 'dashboard',
       name: 'Dashboard',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
-    }]
+      meta: { title: '主页', icon: 'dashboard' }
+    }],
   },
 
   {
@@ -74,7 +74,8 @@ export const constantRoutes = [
         component: () => import('@/views/tree/index'),
         meta: { title: 'Tree', icon: 'tree' }
       }
-    ]
+    ],
+    hidden: true
   },
 
   {
@@ -87,7 +88,8 @@ export const constantRoutes = [
         component: () => import('@/views/form/index'),
         meta: { title: 'Form', icon: 'form' }
       }
-    ]
+    ],
+    hidden: true
   },
 
   {
@@ -145,16 +147,102 @@ export const constantRoutes = [
         component: () => import('@/views/nested/menu2/index'),
         meta: { title: 'menu2' }
       }
-    ]
+    ],
+    hidden: true
   },
 
   {
     path: 'external-link',
-    component: Layout,
+    // component: Layout,
     children: [
       {
         path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
         meta: { title: 'External Link', icon: 'link' }
+      }
+    ],
+    hidden: true
+  },
+  {
+    path: '/sale',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'sale',
+        component: () => import('@/views/sale/index'),
+        meta: { title: '销售管理', icon: 'nested' }
+      }
+    ]
+  },
+  {
+    path: '/purchase',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'purchase',
+        component: () => import('@/views/purchase/index'),
+        meta: { title: '采购管理', icon: 'form' }
+      }
+    ]
+  },
+  {
+    path: '/production',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'production',
+        component: () => import('@/views/production/index'),
+        meta: { title: '生产管理', icon: 'link' }
+      }
+    ]
+  },
+  {
+    path: '/finance',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'finance',
+        component: () => import('@/views/finance/index'),
+        meta: { title: '财务管理', icon: 'table' }
+      }
+    ]
+  },
+  {
+    path: '/warehouse',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'warehouse',
+        component: () => import('@/views/warehouse/index'),
+        meta: { title: '仓库管理', icon: 'example' }
+      }
+    ]
+  },
+  {
+    path: '/systemSetting',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'systemSetting',
+        component: () => import('@/views/systemSetting/index'),
+        meta: { title: '系统设置', icon: 'tree' }
+      }
+    ]
+  },
+  {
+    path: '/help',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'help',
+        component: () => import('@/views/help/index'),
+        meta: { title: '充值/帮助/反馈', icon: 'user' }
       }
     ]
   },

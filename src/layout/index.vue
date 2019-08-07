@@ -1,12 +1,16 @@
+// 布局主界面
 <template>
-  <div :class="classObj" class="app-wrapper">
-    <div v-if="device==='mobile'&&sidebar.opened" class="drawer-bg" @click="handleClickOutside" />
-    <sidebar class="sidebar-container" />
-    <div class="main-container">
-      <div :class="{'fixed-header':fixedHeader}">
-        <navbar />
+  <div>
+    <div :class="classObj" class="app-wrapper">
+      <div class="titleHeader">青岛豪诚木工管理系统</div>
+      <div v-if="device==='mobile'&&sidebar.opened" class="drawer-bg" @click="handleClickOutside" />
+      <sidebar class="sidebar-container" />
+      <div class="main-container">
+        <div :class="{'fixed-header':fixedHeader}">
+          <navbar />
+        </div>
+        <app-main />
       </div>
-      <app-main />
     </div>
   </div>
 </template>
@@ -53,7 +57,14 @@ export default {
 <style lang="scss" scoped>
   @import "~@/styles/mixin.scss";
   @import "~@/styles/variables.scss";
-
+  .titleHeader{
+    position: relative;
+    height: 100px;
+    text-align: center;
+    padding-top: 1%;
+    font-size: 2em;
+    background-color: rgb(170, 231, 216);
+  }
   .app-wrapper {
     @include clearfix;
     position: relative;
@@ -76,7 +87,7 @@ export default {
 
   .fixed-header {
     position: fixed;
-    top: 0;
+    top: 100px;
     right: 0;
     z-index: 9;
     width: calc(100% - #{$sideBarWidth});
